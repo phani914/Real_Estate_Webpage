@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | PrimeNest Realty</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="logo-roof"></span>
+          <span class="logo-house"></span>
+          <span class="logo-key"></span>
+        </span>
+        <span>PrimeNest</span>
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-text">Dark</span>
+        </button>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="index.html#search">Search</a>
+        <a href="index.html#listings">Listings</a>
+        <a href="index.html#details-oak">Details</a>
+        <a href="contact.html" class="active">Contact Agent</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="agent-section">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Talk to an agent</h1>
+        <p>Share what you are looking for and the PrimeNest team will help you plan the next viewing.</p>
+      </div>
+      <form class="agent-form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          <span>Property</span>
+          <select name="property">
+            <option>Oak Meadow Residence</option>
+            <option>Union Station Loft</option>
+            <option>Biscayne Pool Villa</option>
+            <option>Cedar Ridge Home</option>
+            <option>Sonoran View Villa</option>
+            <option>River North Suite</option>
+          </select>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="I would like to schedule a tour this week."></textarea>
+        </label>
+        <button type="submit">Send inquiry</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="logo-roof"></span>
+            <span class="logo-house"></span>
+            <span class="logo-key"></span>
+          </span>
+          <span>PrimeNest</span>
+        </a>
+        <p>Helping buyers compare homes, book tours, and connect with trusted local agents.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="index.html#listings">Featured Listings</a>
+        <a href="index.html#contact-agent">Contact Agent</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>456 Market Avenue<br>San Francisco, CA 94105</p>
+        <p>Phone: (415) 555-0198</p>
+        <p>Email: hello@primenest.com</p>
+      </div>
+      <div>
+        <h3>Stay updated</h3>
+        <p>Get new listings and price updates in your inbox.</p>
+        <form class="footer-form">
+          <input type="email" placeholder="Email address" aria-label="Email address">
+          <button type="submit">Join</button>
+          <p class="footer-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>(c) 2026 PrimeNest Realty. All rights reserved.</p>
+      <p>Privacy Policy | Terms</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
