@@ -37,7 +37,7 @@
         <a href="properties.html">Properties</a>
         <a href="#search">Search</a>
         <a href="#listings">Listings</a>
-        <a href="#details-oak">Details</a>
+        <a href="property-detail.html?property=oak">Details</a>
         <a href="#contact-agent">Contact Agent</a>
       </div>
     </nav>
@@ -96,9 +96,9 @@
       </div>
 
       <form class="filters" id="property-filters">
-        <label>
-          <span>Location</span>
-          <input type="search" name="location" placeholder="Austin, Denver, Miami, Seattle">
+        <label class="filter-wide">
+          <span>Search</span>
+          <input type="search" name="query" placeholder="City, property name, feature, or state">
         </label>
         <label>
           <span>Type</span>
@@ -110,8 +110,17 @@
           </select>
         </label>
         <label>
+          <span>Min price</span>
+          <select name="min-price">
+            <option value="">No min</option>
+            <option value="500000">$500k</option>
+            <option value="750000">$750k</option>
+            <option value="1000000">$1M</option>
+          </select>
+        </label>
+        <label>
           <span>Max price</span>
-          <select name="price">
+          <select name="max-price">
             <option value="">No max</option>
             <option value="600000">$600k</option>
             <option value="850000">$850k</option>
@@ -128,8 +137,28 @@
             <option value="4">4+</option>
           </select>
         </label>
+        <label>
+          <span>Bathrooms</span>
+          <select name="baths">
+            <option value="">Any</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </label>
+        <label>
+          <span>Sort</span>
+          <select name="sort">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price low to high</option>
+            <option value="price-high">Price high to low</option>
+            <option value="beds">Most bedrooms</option>
+            <option value="area">Largest area</option>
+          </select>
+        </label>
         <button type="reset">Reset</button>
       </form>
+      <p class="filter-summary" id="filter-summary" aria-live="polite">Showing all 6 featured homes.</p>
     </section>
 
     <section class="listings" id="listings">
@@ -139,7 +168,7 @@
       </div>
 
       <div class="property-grid" id="property-grid">
-        <article class="property-card" data-location="austin" data-type="house" data-price="785000" data-beds="3">
+        <article class="property-card" data-location="austin" data-type="house" data-price="785000" data-beds="3" data-baths="2.5" data-area="2180" data-search="oak meadow residence austin tx house 3 beds 2.5 baths 2180 sq ft open-plan upgraded kitchen shaded patio attached garage quiet school zone">
           <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80" alt="Modern white house with front lawn">
           <div class="property-body">
             <div class="property-topline">
@@ -153,11 +182,11 @@
               <div><dt>Baths</dt><dd>2.5</dd></div>
               <div><dt>Area</dt><dd>2,180 sq ft</dd></div>
             </dl>
-            <a href="#details-oak">View details</a>
+            <a href="property-detail.html?property=oak">View details</a>
           </div>
         </article>
 
-        <article class="property-card" data-location="denver" data-type="condo" data-price="540000" data-beds="2">
+        <article class="property-card" data-location="denver" data-type="condo" data-price="540000" data-beds="2" data-baths="2" data-area="1320" data-search="union station loft denver co condo 2 beds 2 baths 1320 sq ft walkable downtown floor-to-ceiling windows secure parking storage rooftop access">
           <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Contemporary home exterior with warm lights">
           <div class="property-body">
             <div class="property-topline">
@@ -171,11 +200,11 @@
               <div><dt>Baths</dt><dd>2</dd></div>
               <div><dt>Area</dt><dd>1,320 sq ft</dd></div>
             </dl>
-            <a href="#details-union">View details</a>
+            <a href="property-detail.html?property=union">View details</a>
           </div>
         </article>
 
-        <article class="property-card" data-location="miami" data-type="villa" data-price="1095000" data-beds="4">
+        <article class="property-card" data-location="miami" data-type="villa" data-price="1095000" data-beds="4" data-baths="3.5" data-area="3050" data-search="biscayne pool villa miami fl villa 4 beds 3.5 baths 3050 sq ft private pool guest suite outdoor dining smart home bay access">
           <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Luxury villa with pool at dusk">
           <div class="property-body">
             <div class="property-topline">
@@ -189,11 +218,11 @@
               <div><dt>Baths</dt><dd>3.5</dd></div>
               <div><dt>Area</dt><dd>3,050 sq ft</dd></div>
             </dl>
-            <a href="#details-biscayne">View details</a>
+            <a href="property-detail.html?property=biscayne">View details</a>
           </div>
         </article>
 
-        <article class="property-card" data-location="seattle" data-type="house" data-price="895000" data-beds="4">
+        <article class="property-card" data-location="seattle" data-type="house" data-price="895000" data-beds="4" data-baths="3" data-area="2640" data-search="cedar ridge home seattle wa house 4 beds 3 baths 2640 sq ft renovated craftsman media room dedicated office mature landscaping covered porch">
           <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80" alt="Craftsman home with front porch and landscaped garden">
           <div class="property-body">
             <div class="property-topline">
@@ -207,11 +236,11 @@
               <div><dt>Baths</dt><dd>3</dd></div>
               <div><dt>Area</dt><dd>2,640 sq ft</dd></div>
             </dl>
-            <a href="#details-cedar">View details</a>
+            <a href="property-detail.html?property=cedar">View details</a>
           </div>
         </article>
 
-        <article class="property-card" data-location="phoenix" data-type="villa" data-price="1275000" data-beds="5">
+        <article class="property-card" data-location="phoenix" data-type="villa" data-price="1275000" data-beds="5" data-baths="4" data-area="3480" data-search="sonoran view villa phoenix az villa 5 beds 4 baths 3480 sq ft resort-style pool chef kitchen three-car garage sunset terrace mountain view">
           <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Desert villa with pool and mountain view">
           <div class="property-body">
             <div class="property-topline">
@@ -225,11 +254,11 @@
               <div><dt>Baths</dt><dd>4</dd></div>
               <div><dt>Area</dt><dd>3,480 sq ft</dd></div>
             </dl>
-            <a href="#details-sonoran">View details</a>
+            <a href="property-detail.html?property=sonoran">View details</a>
           </div>
         </article>
 
-        <article class="property-card" data-location="chicago" data-type="condo" data-price="625000" data-beds="2">
+        <article class="property-card" data-location="chicago" data-type="condo" data-price="625000" data-beds="2" data-baths="2" data-area="1460" data-search="river north suite chicago il condo 2 beds 2 baths 1460 sq ft concierge balcony fitness access heated parking dining transit">
           <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=80" alt="Bright modern apartment living area with city windows">
           <div class="property-body">
             <div class="property-topline">
@@ -243,7 +272,7 @@
               <div><dt>Baths</dt><dd>2</dd></div>
               <div><dt>Area</dt><dd>1,460 sq ft</dd></div>
             </dl>
-            <a href="#details-river">View details</a>
+            <a href="property-detail.html?property=river">View details</a>
           </div>
         </article>
       </div>

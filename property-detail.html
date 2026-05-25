@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details | PrimeNest Realty</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="PrimeNest Realty home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="logo-roof"></span>
+          <span class="logo-house"></span>
+          <span class="logo-key"></span>
+        </span>
+        <span>PrimeNest</span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-text">Dark</span>
+        </button>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="index.html#search">Search</a>
+        <a href="index.html#listings">Listings</a>
+        <a href="property-detail.html?property=oak" class="active">Details</a>
+        <a href="#detail-contact">Contact Agent</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="property-detail-page" data-detail-page>
+    <section class="detail-hero">
+      <div class="detail-hero-copy">
+        <a class="back-link" href="index.html#listings">Back to listings</a>
+        <p class="eyebrow" data-detail-type>Featured home</p>
+        <h1 data-detail-title>Oak Meadow Residence</h1>
+        <p class="detail-location" data-detail-location>Austin, TX</p>
+      </div>
+      <div class="detail-hero-price">
+        <span data-detail-price>$785,000</span>
+        <small data-detail-status>Move-in ready</small>
+      </div>
+    </section>
+
+    <section class="detail-gallery" aria-label="Property photos">
+      <img class="gallery-main" data-detail-image="hero" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1400&q=82" alt="Modern white house with front lawn">
+      <img data-detail-image="living" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=82" alt="Open-plan living room with neutral furniture">
+      <img data-detail-image="kitchen" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=82" alt="Bright kitchen with island seating">
+    </section>
+
+    <section class="detail-layout">
+      <div class="detail-main">
+        <div class="detail-stats" aria-label="Property statistics">
+          <div>
+            <span data-detail-beds>3</span>
+            <small>Beds</small>
+          </div>
+          <div>
+            <span data-detail-baths>2.5</span>
+            <small>Baths</small>
+          </div>
+          <div>
+            <span data-detail-area>2,180</span>
+            <small>Sq ft</small>
+          </div>
+          <div>
+            <span data-detail-built>2019</span>
+            <small>Built</small>
+          </div>
+        </div>
+
+        <article class="detail-section">
+          <p class="eyebrow">Overview</p>
+          <h2>Comfort, location, and polished everyday living.</h2>
+          <p data-detail-overview>Open-plan living, upgraded kitchen, shaded patio, attached garage, and a quiet school-zone location.</p>
+        </article>
+
+        <article class="detail-section">
+          <p class="eyebrow">Highlights</p>
+          <ul class="amenity-list" data-detail-amenities>
+            <li>Upgraded kitchen</li>
+            <li>Shaded patio</li>
+            <li>Attached garage</li>
+            <li>School-zone location</li>
+          </ul>
+        </article>
+
+        <article class="detail-section">
+          <p class="eyebrow">Tour notes</p>
+          <div class="tour-note-grid">
+            <div>
+              <strong data-detail-neighborhood>Tree-lined residential pocket</strong>
+              <span>Neighborhood</span>
+            </div>
+            <div>
+              <strong data-detail-commute>18 minutes to downtown</strong>
+              <span>Commute</span>
+            </div>
+            <div>
+              <strong data-detail-availability>This week</strong>
+              <span>Tour availability</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <aside class="detail-sidebar" id="detail-contact">
+        <div class="agent-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=82" alt="PrimeNest agent Maya Chen">
+          <div>
+            <p class="eyebrow">Listing agent</p>
+            <h2>Maya Chen</h2>
+            <p>Senior residential advisor</p>
+          </div>
+        </div>
+
+        <form class="agent-form detail-contact-form">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Property</span>
+            <select name="property" data-detail-property-select>
+              <option>Oak Meadow Residence</option>
+              <option>Union Station Loft</option>
+              <option>Biscayne Pool Villa</option>
+              <option>Cedar Ridge Home</option>
+              <option>Sonoran View Villa</option>
+              <option>River North Suite</option>
+            </select>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4" placeholder="I would like to schedule a tour this week."></textarea>
+          </label>
+          <button type="submit">Request private tour</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="logo-roof"></span>
+            <span class="logo-house"></span>
+            <span class="logo-key"></span>
+          </span>
+          <span>PrimeNest</span>
+        </a>
+        <p>Helping buyers compare homes, book tours, and connect with trusted local agents.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="index.html#listings">Featured Listings</a>
+        <a href="#detail-contact">Contact Agent</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>456 Market Avenue<br>San Francisco, CA 94105</p>
+        <p>Phone: (415) 555-0198</p>
+        <p>Email: hello@primenest.com</p>
+      </div>
+      <div>
+        <h3>Stay updated</h3>
+        <p>Get new listings and price updates in your inbox.</p>
+        <form class="footer-form">
+          <input type="email" placeholder="Email address" aria-label="Email address">
+          <button type="submit">Join</button>
+          <p class="footer-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>(c) 2026 PrimeNest Realty. All rights reserved.</p>
+      <p>Privacy Policy | Terms</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
