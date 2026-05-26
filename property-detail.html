@@ -25,6 +25,8 @@
           <span class="theme-text">Dark</span>
         </button>
 
+        <button class="auth-toggle" type="button" aria-expanded="false" aria-controls="auth-panel">Login / Register</button>
+
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span>
           <span></span>
@@ -42,6 +44,48 @@
       </div>
     </nav>
   </header>
+
+  <section class="auth-panel" id="auth-panel" aria-label="Login and registration forms" hidden>
+    <div class="auth-shell">
+      <div class="auth-copy">
+        <p class="eyebrow">PrimeNest account</p>
+        <h2>Manage saved homes and tour requests.</h2>
+        <p>Sign in to continue or create a buyer profile so agents can prepare the right listings for you.</p>
+      </div>
+      <div class="auth-grid">
+        <form class="auth-form">
+          <h3>Login details</h3>
+          <label>
+            <span>Email</span>
+            <input type="email" name="login-email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="login-password" placeholder="Enter password" required>
+          </label>
+          <button type="submit">Login</button>
+          <p class="auth-status" aria-live="polite"></p>
+        </form>
+        <form class="auth-form register-form">
+          <h3>Register details</h3>
+          <label>
+            <span>Full name</span>
+            <input type="text" name="register-name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="register-email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="register-password" placeholder="Create password" required>
+          </label>
+          <button type="submit">Create account</button>
+          <p class="auth-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <main class="property-detail-page" data-detail-page>
     <section class="detail-hero">

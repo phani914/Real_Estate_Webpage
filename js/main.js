@@ -2,6 +2,9 @@ const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 const themeToggle = document.querySelector(".theme-toggle");
 const themeText = document.querySelector(".theme-text");
+const authToggle = document.querySelector(".auth-toggle");
+const authPanel = document.querySelector("#auth-panel");
+const authForms = document.querySelectorAll(".auth-form");
 const filterForm = document.querySelector("#property-filters");
 const propertyGrid = document.querySelector("#property-grid");
 const propertyCards = Array.from(document.querySelectorAll(".property-card"));
@@ -226,9 +229,27 @@ if (themeToggle) {
   });
 }
 
+function setAuthPanelState(isOpen) {
+  if (!authToggle || !authPanel) return;
+
+  authPanel.hidden = !isOpen;
+  authToggle.setAttribute("aria-expanded", String(isOpen));
+
+  if (isOpen) {
+    setMenuState(false);
+  }
+}
+
+if (authToggle && authPanel) {
+  authToggle.addEventListener("click", () => {
+    setAuthPanelState(authPanel.hidden);
+  });
+}
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     setMenuState(false);
+    setAuthPanelState(false);
   }
 });
 
@@ -374,6 +395,22 @@ function renderPropertyDetailPage() {
 }
 
 renderPropertyDetailPage();
+
+authForms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const status = form.querySelector(".auth-status");
+    const isRegisterForm = form.classList.contains("register-form");
+
+    if (status) {
+      status.textContent = isRegisterForm
+        ? "Account details received."
+        : "Login details received.";
+    }
+
+    form.reset();
+  });
+});
 
 agentForms.forEach((form) => {
   form.addEventListener("submit", (event) => {

@@ -23,6 +23,8 @@
           <span class="theme-text">Dark</span>
         </button>
 
+        <button class="auth-toggle" type="button" aria-expanded="false" aria-controls="auth-panel">Login / Register</button>
+
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span>
           <span></span>
@@ -40,16 +42,88 @@
     </nav>
   </header>
 
-  <main>
-    <section class="agent-section">
-      <div>
+  <section class="auth-panel" id="auth-panel" aria-label="Login and registration forms" hidden>
+    <div class="auth-shell">
+      <div class="auth-copy">
+        <p class="eyebrow">PrimeNest account</p>
+        <h2>Manage saved homes and tour requests.</h2>
+        <p>Sign in to continue or create a buyer profile so agents can prepare the right listings for you.</p>
+      </div>
+      <div class="auth-grid">
+        <form class="auth-form">
+          <h3>Login details</h3>
+          <label>
+            <span>Email</span>
+            <input type="email" name="login-email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="login-password" placeholder="Enter password" required>
+          </label>
+          <button type="submit">Login</button>
+          <p class="auth-status" aria-live="polite"></p>
+        </form>
+        <form class="auth-form register-form">
+          <h3>Register details</h3>
+          <label>
+            <span>Full name</span>
+            <input type="text" name="register-name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="register-email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="register-password" placeholder="Create password" required>
+          </label>
+          <button type="submit">Create account</button>
+          <p class="auth-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <main class="contact-page">
+    <section class="agent-section contact-section">
+      <div class="contact-intro">
         <p class="eyebrow">Contact</p>
         <h1>Talk to an agent</h1>
-        <p>Share what you are looking for and the PrimeNest team will help you plan the next viewing.</p>
+        <p>Share what you are looking for and the PrimeNest team will help you plan your next viewing.</p>
+        <div class="contact-methods" aria-label="PrimeNest contact details">
+          <div>
+            <b aria-hidden="true">01</b>
+            <span>Call</span>
+            <a href="tel:+14155550198">(415) 555-0198</a>
+          </div>
+          <div>
+            <b aria-hidden="true">02</b>
+            <span>Email</span>
+            <a href="mailto:hello@primenest.com">hello@primenest.com</a>
+          </div>
+          <div>
+            <b aria-hidden="true">03</b>
+            <span>Office</span>
+            <p>456 Market Avenue<br>San Francisco, CA 94105</p>
+          </div>
+        </div>
+        <div class="contact-agent-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=420&q=82" alt="PrimeNest agent Maya Chen">
+          <div>
+            <span>Primary contact</span>
+            <strong>Maya Chen</strong>
+            <p>Senior residential advisor</p>
+          </div>
+        </div>
       </div>
-      <form class="agent-form">
+
+      <form class="agent-form contact-form" aria-label="Contact PrimeNest Realty">
+        <div class="form-heading">
+          <p class="eyebrow">Inquiry details</p>
+          <h2>How can we help?</h2>
+        </div>
         <label>
-          <span>Name</span>
+          <span>Full name</span>
           <input type="text" name="name" placeholder="Your name" required>
         </label>
         <label>
@@ -57,8 +131,23 @@
           <input type="email" name="email" placeholder="you@example.com" required>
         </label>
         <label>
+          <span>Phone</span>
+          <input type="tel" name="phone" placeholder="(555) 123-4567">
+        </label>
+        <label>
+          <span>I want to</span>
+          <select name="interest" required>
+            <option value="">Choose an option</option>
+            <option>Schedule a private tour</option>
+            <option>Ask about a listing</option>
+            <option>Get buying guidance</option>
+            <option>Discuss selling my home</option>
+          </select>
+        </label>
+        <label>
           <span>Property</span>
           <select name="property">
+            <option>Not sure yet</option>
             <option>Oak Meadow Residence</option>
             <option>Union Station Loft</option>
             <option>Biscayne Pool Villa</option>
@@ -68,10 +157,34 @@
           </select>
         </label>
         <label>
-          <span>Message</span>
-          <textarea name="message" rows="4" placeholder="I would like to schedule a tour this week."></textarea>
+          <span>Timeline</span>
+          <select name="timeline">
+            <option>As soon as possible</option>
+            <option>This week</option>
+            <option>This month</option>
+            <option>Just researching</option>
+          </select>
         </label>
-        <button type="submit">Send inquiry</button>
+        <fieldset class="contact-preference">
+          <legend>Preferred contact</legend>
+          <label>
+            <input type="radio" name="contact-preference" value="Email" checked>
+            <span>Email</span>
+          </label>
+          <label>
+            <input type="radio" name="contact-preference" value="Phone">
+            <span>Phone</span>
+          </label>
+          <label>
+            <input type="radio" name="contact-preference" value="Text">
+            <span>Text</span>
+          </label>
+        </fieldset>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" placeholder="Tell us about your ideal home, timing, or the property you want to see."></textarea>
+        </label>
+        <button type="submit">Send message</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
     </section>
